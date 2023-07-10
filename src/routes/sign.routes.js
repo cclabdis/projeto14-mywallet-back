@@ -11,3 +11,16 @@ signRouter.post("/sign-up", validateSchema(userSchema), signUp)
 
 
 export default signRouter
+
+
+
+
+
+// const authRouter = Router()
+
+// .("/login", validateSchema(loginSchema), login)
+// .("/logout", authValidation, logout)
+
+
+
+

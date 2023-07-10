@@ -10,3 +10,12 @@ export const loginSchema = joi.object({
     email: joi.string().email().required(),
     password: joi.string().min(3).required()
 })
+
+
+
+
+// export const transactionSchema = joi.object({
+//     value: joi.number().positive().required(),
+//     description: joi.string().required(),
+//     type: joi.string().required().valid("income", "expense")
+// })
