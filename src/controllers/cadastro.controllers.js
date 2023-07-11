@@ -1,7 +1,6 @@
 import { ObjectId } from "mongodb";
 import { db } from "../database/database.connection.js";
 import bcrypt from "bcrypt";
-
 import { v4 as uuid } from "uuid";
 
 
@@ -42,6 +41,17 @@ export async function login(req, res) {
     }
 }
 
+
+export async function logout(req, res) {
+    const token = res.locals.session.token
+
+    try {
+        await db.collection("sessions").deleteOne({ token })
+        res.status(200).send("Sessão finalizada")
+    } catch (err) {
+        res.status(500).send(err.message)
+    }
+}
 
 
 //db
